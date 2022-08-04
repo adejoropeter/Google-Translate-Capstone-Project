@@ -24,8 +24,8 @@ const TextArea = ({
         value={style === "input" ? textToTranslate : translatedText}
         placeholder={style == "input" ? "Enter Text" : "Translating..."}
         disabled={style === "output"}
-        className={`h-[10rem] w-[15rem] m-3 border-none border-0
-        outline-none resize-none text-[#868B90] text-4xl bg-slate-500 mt-12 ${
+        className={`h-[14rem] w-[15rem] m-3 border-none border-0
+        outline-none resize-none text-[#868B90] text-2xl bg-slate-500 mt-12 ${
           style === "output" ? null : "bg-opacity-0"
         }`}
       ></textarea>

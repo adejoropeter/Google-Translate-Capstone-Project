@@ -9,7 +9,7 @@ const Input = ({ style, selectedLng, setShowModal }) => {
     >
       <input
         value={selectedLng}
-        className="w-[240px] h-[50px] border-0 border-white border-solid rounded-md "
+        className="w-[240px] h-[50px] text-xl p-2 border-0 border-white border-solid rounded-md "
         placeholder={style}
         disabled={true}
       />

@@ -1,10 +1,24 @@
-import React, { useId, useState } from "react";
+import React, { useId, useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
-const Modal = ({ setShowModal, fromLanguage, setChosenLng, chosenLng }) => {
+import axios from "axios";
+const Modal = ({
+  setShowModal,
+  fromLanguage,
+  setFromLanguage,
+  setChosenLng,
+  chosenLng,
+  to,
+}) => {
+  const id = useId();
   const [searchLng, setSearchLng] = useState("");
-  const filtered = fromLanguage.filter((language) => {
-    return language.name.toLowerCase().includes(searchLng.toLowerCase());
+  let {
+    data: { languages },
+  } = fromLanguage;
+  const langs = languages.filter((language, index) => {
+    return language.language.toLowerCase().includes(searchLng.toLowerCase());
   });
+  // const filtered = fromLanguage.filter((language) => {
+  // });
   return (
     <>
       <div className="flex items-center w-[100%] ">
@@ -23,18 +37,18 @@ const Modal = ({ setShowModal, fromLanguage, setChosenLng, chosenLng }) => {
         </div>
       </div>
       <div>
-        <ul>
-          {filtered.map(({ name, id }) => {
+        <ul className="flex flex-wrap">
+          {langs.map(({ language }) => {
             return (
               <li
-                className="cursor-pointer text-white text-xl"
+                className="cursor-pointer text-white text-xl p-2"
                 key={id}
                 onClick={(e) => {
                   setShowModal(null);
                   setChosenLng(e.target.textContent);
                 }}
               >
-                {name}
+                {language}
               </li>
             );
           })}
