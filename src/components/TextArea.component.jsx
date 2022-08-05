@@ -8,7 +8,6 @@ const TextArea = ({
   showModal,
   textToTranslate,
   setTextToTranslate,
-  setTranslatedText,
   translatedText,
 }) => {
   return (
@@ -25,7 +24,7 @@ const TextArea = ({
         placeholder={style == "input" ? "Enter Text" : "Translating..."}
         disabled={style === "output"}
         className={`h-[14rem] w-[15rem] m-3 border-none border-0
-        outline-none resize-none text-[#868B90] text-2xl bg-slate-500 mt-12 ${
+        outline-none resize-none text-[#868B90] text-2xl bg-[#424346]  mt-12 ${
           style === "output" ? null : "bg-opacity-0"
         }`}
       ></textarea>

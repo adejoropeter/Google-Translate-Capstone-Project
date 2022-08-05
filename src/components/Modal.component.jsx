@@ -1,14 +1,6 @@
 import React, { useId, useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
-import axios from "axios";
-const Modal = ({
-  setShowModal,
-  fromLanguage,
-  setFromLanguage,
-  setChosenLng,
-  chosenLng,
-  to,
-}) => {
+const Modal = ({ setShowModal, fromLanguage, setChosenLng }) => {
   const id = useId();
   const [searchLng, setSearchLng] = useState("");
   let {
@@ -17,8 +9,7 @@ const Modal = ({
   const langs = languages.filter((language, index) => {
     return language.language.toLowerCase().includes(searchLng.toLowerCase());
   });
-  // const filtered = fromLanguage.filter((language) => {
-  // });
+  const filtered = fromLanguage.filter((language) => {});
   return (
     <>
       <div className="flex items-center w-[100%] ">
@@ -36,8 +27,8 @@ const Modal = ({
           />
         </div>
       </div>
-      <div>
-        <ul className="flex flex-wrap">
+      <div className=" w-[100%] h-[300px] overflow-scroll mt-6">
+        <ol className="flex flex-wrap">
           {langs.map(({ language }) => {
             return (
               <li
@@ -52,7 +43,7 @@ const Modal = ({
               </li>
             );
           })}
-        </ul>
+        </ol>
       </div>
     </>
   );
