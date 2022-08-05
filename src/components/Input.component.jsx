@@ -16,7 +16,7 @@ const Input = ({ style, selectedLng, setShowModal }) => {
       <div>
         <AiFillCaretDown
           size="30px"
-          className="text-blue-500 absolute right-8 top-0"
+          className="text-blue-500 absolute right-8 top-0 "
         />
       </div>
     </div>

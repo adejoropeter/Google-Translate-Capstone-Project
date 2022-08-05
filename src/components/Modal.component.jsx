@@ -1,4 +1,4 @@
-import React, { useId, useState, useEffect } from "react";
+import React, { useId, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 const Modal = ({ setShowModal, fromLanguage, setChosenLng }) => {
   const id = useId();
@@ -6,10 +6,9 @@ const Modal = ({ setShowModal, fromLanguage, setChosenLng }) => {
   let {
     data: { languages },
   } = fromLanguage;
-  const langs = languages.filter((language, index) => {
+  const langs = languages.filter((language) => {
     return language.language.toLowerCase().includes(searchLng.toLowerCase());
   });
-  const filtered = fromLanguage.filter((language) => {});
   return (
     <>
       <div className="flex items-center w-[100%] ">
@@ -27,7 +26,7 @@ const Modal = ({ setShowModal, fromLanguage, setChosenLng }) => {
           />
         </div>
       </div>
-      <div className=" w-[100%] h-[300px] overflow-scroll mt-6">
+      <div className=" w-[100%] h-[270px] overflow-scroll mt-6 ">
         <ol className="flex flex-wrap">
           {langs.map(({ language }) => {
             return (
