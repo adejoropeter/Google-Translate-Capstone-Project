@@ -5,7 +5,7 @@ import image from "./image.jpg";
 // import logo from "/logo512.png";
 const App = () => {
   return (
-    <div className="w-[100vw] h-[100vh] flex justify-center items-center flex-col bg-[#202124]">
+    <div className="w-[100vw] min-h-[100vh] flex justify-center items-center flex-col bg-[#202124]">
       <div className="w-20 h-20 mb-5 relative md:static">
         <img
           src={image}
@@ -13,7 +13,7 @@ const App = () => {
         />
       </div>
 
-      <main className=" bg-[#202124] w-[100%] md:w-[700px] h-[60%] p-1 flex flex-col">
+      <main className=" bg-[#202124] w-[100%] md:w-[700px] h-[100%] p-1 flex flex-col">
         <div className="flex text-4xl md:text-6xl mb-10">
           <NavLink
             to="/"
