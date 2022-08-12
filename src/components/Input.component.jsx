@@ -9,14 +9,14 @@ const Input = ({ style, selectedLng, setShowModal }) => {
     >
       <input
         value={selectedLng}
-        className="w-[240px] h-[50px] text-xl p-2 border-0 border-white border-solid rounded-md cursor-pointer"
+        className="w-[8rem] p-2 md:w-[240px] h-[50px] text-2xl font-semibold md:p-2 border-0 border-white border-solid rounded-md cursor-pointer"
         placeholder={style}
         disabled={true}
       />
       <div>
         <AiFillCaretDown
-          size="30px"
-          className="text-blue-500 absolute right-8 top-0 "
+          className="text-blue-500 w-[2rem] absolute top-2 right-12 md:right-8 md:top-0 "
+          size={"1.5rem"}
         />
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState, useId, useEffect } from "react";
-import { FaExchangeAlt } from "react-icons/fa";
+import { FaExchangeAlt, FaArrowAltCircleRight } from "react-icons/fa";
 import Modal from "./Modal.component";
 import axios from "axios";
 import TextArea from "./TextArea.component";
@@ -72,11 +72,11 @@ const Home = () => {
         setTranslatedText(response.data.data.translations[0].translatedText);
       })
       .catch(function (error) {
-        setTranslatedText("Something went wrong");
+        setTranslatedText(error);
       });
   };
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between md:justify-between relative pt-20 p-5">
       {!showModal && (
         <>
           <TextArea
@@ -87,8 +87,8 @@ const Home = () => {
             textToTranslate={textToTranslate}
             setTextToTranslate={setTextToTranslate}
           />
-          <div className="text-white cursor-pointer" onClick={exchange}>
-            <FaExchangeAlt size="30px" />
+          <div className="text-white cursor-pointer " onClick={exchange}>
+            <FaExchangeAlt className="w-[4rem] " size={"2rem"} />
           </div>
           <TextArea
             style="output"
@@ -99,12 +99,10 @@ const Home = () => {
             setTranslatedText={setTranslatedText}
           />
           <div
-            className="absolute top-[70%] left-[50%] -translate-x-[50%] -translate-y-[50%]"
+            className="  absolute top-[65%] md:top-[70%] left-[55%] -translate-x-[50%] -translate-y-[50%]"
             onClick={translate}
           >
-            <button className="bg-blue-500 w-fit h-fit text-xl text-white">
-              Translate
-            </button>
+            <FaArrowAltCircleRight className="w-10 h-10 md:w-20 md:h-20 text-white" />
           </div>
         </>
       )}
