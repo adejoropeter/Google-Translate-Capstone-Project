@@ -76,7 +76,7 @@ const Home = () => {
       });
   };
   return (
-    <div className="flex justify-between md:justify-between relative pt-20 p-5">
+    <div className="flex justify-between md:justify-between relative  p-5">
       {!showModal && (
         <>
           <TextArea
@@ -102,7 +102,7 @@ const Home = () => {
             className="  absolute top-[65%] md:top-[70%] left-[55%] -translate-x-[50%] -translate-y-[50%]"
             onClick={translate}
           >
-            <FaArrowAltCircleRight className="w-10 h-10 md:w-20 md:h-20 text-white" />
+            <FaArrowAltCircleRight className="w-10 h-10 md:w-10 md:h-10 text-white" />
           </div>
         </>
       )}

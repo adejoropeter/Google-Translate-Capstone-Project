@@ -5,16 +5,16 @@ import image from "./image.jpg";
 // import logo from "/logo512.png";
 const App = () => {
   return (
-    <div className="w-[100vw] min-h-[100vh] flex justify-center items-center flex-col bg-[#202124]">
-      <div className="w-20 h-20 mb-5 relative md:static">
+    <div className="w-[100vw] min-h-[100vh] flex justify-center items-center flex-col bg-[#202124] pt-10 pb-10">
+      <div className="w-[100%] min-h-[50%] relative mt-20">
         <img
           src={image}
-          className="w-[100%] h-[100%] rounded-full object-cover absolute top-[50%] left-[50%] translate-x-[-80%] translate-y-[-80%] md:static "
+          className="w-[100px] h-[100px] rounded-full object-cover absolute top-[50%] left-[50%] translate-x-[-80%] translate-y-[-80%] "
         />
       </div>
 
-      <main className=" bg-[#202124] w-[100%] md:w-[700px] h-[100%] p-1 flex flex-col">
-        <div className="flex text-4xl md:text-6xl mb-10">
+      <main className=" bg-[#202124] w-[100%] md:w-[700px] h-[70%] p-1 flex flex-col mt-10">
+        <div className="flex text-4xl mb-10">
           <NavLink
             to="/"
             className={({ isActive }) => {
