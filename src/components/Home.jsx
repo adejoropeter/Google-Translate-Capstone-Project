@@ -3,7 +3,6 @@ import { FaExchangeAlt, FaArrowAltCircleRight } from "react-icons/fa";
 import Modal from "./Modal.component";
 import axios from "axios";
 import TextArea from "./TextArea.component";
-import { Button as api } from "./Button";
 const Home = () => {
   const [showModal, setShowModal] = useState(null);
   const [fromLanguage, setFromLanguage] = useState(null);
@@ -13,10 +12,10 @@ const Home = () => {
 
     const options = {
       method: "GET",
-      url: "https://google-translate1.p.rapidapi.com/language/translate/v2/languages",
+      url: "http://localhost:8000/get",
       headers: {
         "Accept-Encoding": "application/gzip",
-        "X-RapidAPI-Key": api,
+        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
         "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
       },
     };
@@ -61,7 +60,7 @@ const Home = () => {
       headers: {
         "content-type": "application/x-www-form-urlencoded",
         "Accept-Encoding": "application/gzip",
-        "X-RapidAPI-Key": api,
+        "X-RapidAPI-Key": "e89c441662msh5494c52548eb227p1fee68jsn19bd083abb9d",
         "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
       },
       data: encodedParams,
